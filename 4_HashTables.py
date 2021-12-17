@@ -89,3 +89,6 @@ for line in lines:
     lines = line.replace('\n', ' ')
 
     print(line)
+
+#Versuch es mal mit:
+#f_new=re.sub('[^a-zA-Z0-9 ]','',f)
