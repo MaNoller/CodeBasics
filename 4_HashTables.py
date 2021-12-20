@@ -80,15 +80,18 @@ poem.txt Contains famous poem "Road not taken" by poet Robert Frost. You have to
 python and print every word and its count as show below. Think about the best data structure that you 
 can use to solve this problem and figure out why you selected that specific data structure.
 '''
-
+wortlist={}
 with open("poem.txt","r") as f:
-    #lines = f.read().replace('\n',' ')
-    lines = f.read().split(' ')
+    for line in f:
+        items=line.split(' ')
+        for item in items:
+            item=item.replace('\n','')
+            item=re.sub('[^a-zA-Z0-9 ]', '', item)
+            if item in wortlist:
+                wortlist[item]+=1
+            else:
+                wortlist[item] = 1
 
-for line in lines:
-    lines = line.replace('\n', ' ')
 
-    print(line)
 
-#Versuch es mal mit:
-#f_new=re.sub('[^a-zA-Z0-9 ]','',f)
+print(wortlist)
