@@ -29,6 +29,10 @@ def reverse_string(string):
     for el in string:
         stack.push(el)
 
+    rev=''
+    while not stack.is_empty():
+        rev+=stack.pop()
+    return rev
 
 stack = Stack()
 string='We will conquere COVID-19'
