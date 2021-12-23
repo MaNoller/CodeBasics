@@ -41,3 +41,68 @@ string='We will conquere COVID-19'
 if __name__ == '__main__':
     print(reverse_string("We will conquere COVI-19"))
     print(reverse_string("I am the king"))
+
+'''
+Write a function in python that checks if paranthesis in the string are balanced or not. 
+Possible parantheses are "{}',"()" or "[]". Use Stack class from the tutorial. 
+'''
+
+
+def is_balanced(string):
+    klammern = {')': '(', ']': '[', '}': '{'}
+    stack=Stack()
+    for el in string:
+        if el in ['[','(','{']:
+            stack.push(el)
+        if el in [']',')','}']:
+            if stack.size()==0:
+                return False
+            if not stack.pop()==klammern[el]:
+                return False
+
+    if stack.size()==0:
+        return True
+    else:
+        return False
+
+
+
+
+def is_match(ch1, ch2):
+    match_dict = {
+        ')': '(',
+        ']': '[',
+        '}': '{'
+    }
+    return match_dict[ch1] == ch2
+
+
+def is_balanced_2(s):
+    stack = Stack()
+    for ch in s:
+        if ch=='(' or ch=='{' or ch == '[':
+            stack.push(ch)
+        if ch==')' or ch=='}' or ch == ']':
+            if stack.size()==0:
+                return False
+            if not is_match(ch,stack.pop()):
+                return False
+
+    return stack.size()==0
+
+
+if __name__ == '__main__':
+    print(is_balanced("({a+b})"))
+    print(is_balanced("))((a+b}{"))
+    print(is_balanced("((a+b))"))
+    print(is_balanced("((a+g))"))
+    print(is_balanced("))"))
+    print(is_balanced("[a+b]*(x+2y)*{gg+kk}"))
+    print('AB HIER LSG:')
+    print(is_balanced_2("({a+b})"))
+    print(is_balanced_2("))((a+b}{"))
+    print(is_balanced_2("((a+b))"))
+    print(is_balanced_2("((a+g))"))
+    print(is_balanced_2("))"))
+    print(is_balanced_2("[a+b]*(x+2y)*{gg+kk}"))
+
