@@ -49,26 +49,6 @@ def build_product_tree():
     gels.add_child(TreeNode('Waqas','Policy Manager'))
 
 
-
-    '''
-    laptop = TreeNode("Laptop")
-    laptop.add_child(TreeNode("Mac"))
-    laptop.add_child(TreeNode("Surface"))
-    laptop.add_child(TreeNode("Thinkpad"))
-
-    cellphone = TreeNode("Cell Phone")
-    cellphone.add_child(TreeNode("iPhone"))
-    cellphone.add_child(TreeNode("Google Pixel"))
-    cellphone.add_child(TreeNode("Vivo"))
-
-    tv = TreeNode("TV")
-    tv.add_child(TreeNode("Samsung"))
-    tv.add_child(TreeNode("LG"))
-
-    root.add_child(laptop)
-    root.add_child(cellphone)
-    root.add_child(tv)
-'''
     root.print_tree('both')
     root.print_tree('designation')
     root.print_tree('name')
@@ -88,6 +68,74 @@ if __name__ == '__main__':
     root_node.print_tree("designation") # prints only designation hierarchy
     root_node.print_tree("both") # prints both (name and designation) hierarchy
 '''
+
+
+if __name__ == '__main__':
+    build_product_tree()
+    
+##########################    EX No 2    ##########################################################################
+class TreeNode:
+    def __init__(self, data):
+        self.data = data
+        self.children = []
+        self.parent = None
+
+    def get_level(self):
+        level = 0
+        p = self.parent
+        while p:
+            level += 1
+            p = p.parent
+
+        return level
+
+    def print_tree(self, dep):
+        if dep >= self.get_level():
+            spaces = ' ' * self.get_level() * 3
+            prefix = spaces + "|__" if self.parent else ""
+            print(prefix + self.data)
+            if self.children:
+                for child in self.children:
+                    child.print_tree(dep)
+
+    def add_child(self, child):
+        child.parent = self
+        self.children.append(child)
+
+def build_product_tree():
+    root = TreeNode('Global')
+    india=TreeNode('India')
+    root.add_child(india)
+    usa=TreeNode('USA')
+    root.add_child(usa)
+
+    gujarat=TreeNode('Gujarat')
+    india.add_child(gujarat)
+    karnataka=TreeNode('Karnataka')
+    india.add_child(karnataka)
+
+    gujarat.add_child(TreeNode('Ahmedabad'))
+    gujarat.add_child(TreeNode('Baroda'))
+    karnataka.add_child(TreeNode('Bangluru'))
+    karnataka.add_child(TreeNode('Mysore'))
+
+
+    newjersey=TreeNode('New Jersey')
+    usa.add_child(newjersey)
+    california=TreeNode('California')
+    usa.add_child(california)
+
+    newjersey.add_child(TreeNode('Princeton'))
+    newjersey.add_child(TreeNode('Trenton'))
+    california.add_child(TreeNode('San Francisco'))
+    california.add_child(TreeNode('Moutain View'))
+    california.add_child(TreeNode('Palo Alto'))
+
+
+
+    root.print_tree(3)
+
+
 
 
 if __name__ == '__main__':
