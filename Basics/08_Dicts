@@ -123,3 +123,19 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+'''
+Write circle_calc() function that takes radius of a circle as an input from user and then it calculates and returns area, circumference and diameter.
+You should get these values in your main program by calling circle_calc function and then print them
+'''
+
+def circle_calc():
+    radius=
+
+
+def main():
+    circle_calc()
+
+if __name__ == '__main__':
+    main()
