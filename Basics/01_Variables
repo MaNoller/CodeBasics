@@ -1,0 +1,25 @@
+#Exercise: Python Variables
+#Create a variable called break and assign it a value 5. See what happens and find out the reason behind the behavior that you see.
+#-> Break is a specified assignment for ending loops
+#Create two variables. One to store your birth year and another one to store current year. Now calculate your age using these two variables
+Jahr=1993
+Aktuell=2022
+Alter=Aktuell-Jahr
+print(Alter)
+
+#Store your first, middle and last name in three different variables and then print your full name using these variables
+Vorname='Marcel'
+Nachname='Noller'
+Ganzname=f"{Vorname} {Nachname}"
+print(Ganzname)
+    
+
+'''Answer which of these are invalid variable names: 
+_nation ja
+1record nein
+record1 ja
+record_one ja
+record-one nein
+record^one nein
+continue nein
+'''
