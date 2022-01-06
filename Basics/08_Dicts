@@ -131,7 +131,9 @@ You should get these values in your main program by calling circle_calc function
 '''
 
 def circle_calc():
-    radius=
+    radius=float(input('Please enter your desired Radius:'))
+    diameter=2*radius
+    area=
 
 
 def main():
