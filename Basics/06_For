@@ -1,0 +1,71 @@
+#After flipping a coin 10 times you got this result,
+result = ["heads","tails","tails","heads","tails","heads","heads","tails","tails","tails"]
+#Using for loop figure out how many times you got heads
+count=0
+for el in result:
+    if el=="heads":
+        count+=1
+print(f"There were {count} heads")
+
+
+#Print square of all numbers between 1 to 10 except even numbers
+for i in range(1,10):
+    if i%2==1:
+        print(i**2)
+
+#Your monthly expense list (from Jan to May) looks like this,
+expense_list = [2340, 2500, 2100, 3100, 2980]
+#Write a program that asks you to enter an expense amount and program should tell you in which month that expense occurred.
+#If expense is not found then it should print that as well.
+exp=int(input("Please enter your expenses:"))
+
+if exp in expense_list:
+    print('Geht rein')
+    index= expense_list.index(exp)
+    if index==0:
+        print("Your expenses were in Jan")
+    elif index==1:
+        print("Your expenses were in Feb")
+    elif index==2:
+        print("Your expenses were in Mar")
+    elif index==3:
+        print("Your expenses were in Apr")
+    else:
+        print("Your expenses were in May")
+else:
+    print("Expenses not in List!")
+
+
+
+#Lets say you are running a 5 km race. Write a program that,
+
+#Upon completing each 1 km asks you "are you tired?"
+#If you reply "yes" then it should break and print "you didn't finish the race"
+#If you reply "no" then it should continue and ask "are you tired" on every km
+#If you finish all 5 km then it should print congratulations message
+
+for i in range(5):
+    if i==4:
+        print("Yeah you did the thing!")
+        break
+    answer=input("Are your tired yet?")
+    if answer.lower()=='yes':
+        print("You didn finish the race")
+        break
+    elif answer.lower()=='no':
+        continue
+    
+
+#Write a program that prints following shape
+'''
+*
+**
+***
+****
+*****
+'''
+s=''
+for i in range(5):
+    s+='*'
+    print(s)
+
