@@ -47,7 +47,23 @@ def count_dict():
     elif inp.lower()=='remove':
         miss_country=input("Please enter Country to remove:")
         miss_country=miss_country.capitalize()
-        
+        if miss_country in countries:
+            del countries[miss_country]
+            print_dict(countries)
+        else:
+            print("This country is not in your List")
+            return
+    elif inp.lower()=='query':
+        query=input("Which Country do you want to query?")
+        query=query.capitalize()
+        if query in countries:
+            print(f"Population of {query} is {countries[query]}!")
+        else:
+            print("This country is not in your List")
+            return
+    else:
+        print('Invalid Input! Try again')
+        return
         
     
     
