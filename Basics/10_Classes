@@ -1,0 +1,13 @@
+'''Create a sample class named Employee with two attributes id and name
+employee :
+    id
+    name'''
+class Employee:
+    def __init__(self,id,name):
+        self.id=id
+        self.name=name
+    
+emp = Employee(1, "coder")
+print(emp.id, emp.name)
+del emp.id
+del emp
