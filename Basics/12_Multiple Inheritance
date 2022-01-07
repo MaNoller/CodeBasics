@@ -1,0 +1,20 @@
+#Create multiple inheritance on teacher,student and youtuber
+
+class Youtuber:
+    def no_skills(self):
+        print('Being completely useless')
+        
+class Teacher:
+    def teach_skills(self):
+        print('Teaching')
+        
+class Student(Teacher, Youtuber):
+    def skills(self):
+        #Teacher.skills(self)
+        #Youtuber.skills(self)
+        print('learning... I guess?')
+
+not_me=Student()
+not_me.skills()
+not_me.no_skills()
+not_me.teach_skills()
