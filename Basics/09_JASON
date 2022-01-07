@@ -1,3 +1,4 @@
+import re
 '''
 poem.txt contains famous poem "Road not taken" by poet Robert Frost. You have to read this file in your python program and find out words with maximum occurance.
 '''
@@ -15,4 +16,9 @@ with open("poem.txt","r") as f:
 
 
 
+
+wortlist=sorted(wortlist.items(), key=lambda x: x[1], reverse=True)
 print(wortlist)
+print("The 5 most commmon words are:")
+for word,count in wortlist[:5]:
+    print(f"The word {word} with {count} occurances")
