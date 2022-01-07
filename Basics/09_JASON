@@ -1,0 +1,18 @@
+'''
+poem.txt contains famous poem "Road not taken" by poet Robert Frost. You have to read this file in your python program and find out words with maximum occurance.
+'''
+wortlist={}
+with open("poem.txt","r") as f:
+    for line in f:
+        items=line.split(' ')
+        for item in items:
+            item=item.replace('\n','')
+            item=re.sub('[^a-zA-Z0-9 ]', '', item)
+            if item in wortlist:
+                wortlist[item]+=1
+            else:
+                wortlist[item] = 1
+
+
+
+print(wortlist)
