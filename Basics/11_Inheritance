@@ -1,0 +1,12 @@
+class Animal:
+    def __init__(self,habi):
+        self.habitat=habi
+    def print_habitat(self):
+        print(self.habitat)
+        
+class Dog(Animal):
+    def __init__(self):
+        super().__init__('Kennel')
+
+x = Dog()
+x.print_habitat()
