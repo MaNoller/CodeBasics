@@ -1,0 +1,29 @@
+Exercise: Commandline Argument Processing using argparse
+
+    Take subject marks as command line arguments
+
+example: 
+    python3 cmd.py --physics 60 --chemistry 70 --maths 90
+
+    Find average marks for the three subjects using command line input of marks.
+SOLUTION:
+
+import argparse
+
+if __name__=='__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--physics', help='grade')
+    parser.add_argument('--chemistry', help='grade')
+    parser.add_argument('--maths', help='grade')
+
+    args=parser.parse_args()
+
+
+    try:
+        p = int(args.physics)
+        c = int(args.chemistry)
+        m = int(args.maths)
+        avg_grade='{0:.2f}'.format((p+c+m)/3)
+        print('Average grade is:', avg_grade)
+    except:
+        print("Check Input arguments!")
