@@ -6,18 +6,17 @@ class fibonacci:
         self.n1=1
         self.limit=limit
         self.curr=1
-        self.count=1
         
     def __iter__(self):
         return self
         
     def __next__(self):
-        if self.limit>self.count:
+        if self.limit>=self.n2:
             self.curr=self.n2+self.n1
+            n2_old=self.n2
             self.n2=self.n1
             self.n1=self.curr
-            self.count+=1
-            return self.curr
+            return n2_old
         else:
             raise StopIteration
             
