@@ -1,0 +1,22 @@
+#1create any set anf try to use frozenset(setname)
+integer = [1, -1, 2, -2, 3, -3]
+s=set(integer)
+s2=frozenset(s)
+print(s,s2)
+#The frozenset() function returns an immutable frozenset object initialized with elements from the given iterable.
+
+'''2Find the elements in a given set that are not in another set
+
+    set1 = {1,2,3,4,5}
+    set2 = {4,5,6,7,8}
+
+    diffrence between set1 and set2 is {1,2,3}
+'''
+
+set1 = {1,2,3,4,5}
+set2 = {4,5,6,7,8}
+print('difference1:' ,set1.difference(set2))
+print('difference2:' ,set2.difference(set1))
+
+#-> in set a aber nicht in set b (im Prinzip) -- nicht symmetrisch!
+     
