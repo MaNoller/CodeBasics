@@ -1,0 +1,31 @@
+#1 Create a decorator function to check that the argument passed to the function factorial is a 
+#non-negative integer:
+class NegativeNumberException(Exception):
+    pass
+
+class NonIntegerExeption(Exception):
+    pass
+ 
+def check_sign(func):
+    def wrapper(*args,**kwargs):
+        print('Input of fcn is:', args[0])
+        if isinstance(args[0], int)==False:
+            print('Is not integer')
+            raise NonIntegerExeption
+        if args[0] < 0:
+            print('Is negative')
+            raise NegativeNumberException
+        result = func(*args,**kwargs)
+        return result
+    return wrapper
+   
+#2Create a factorial function which finds the factorial of a number.
+@check_sign
+def factorial(num):
+    factor=1
+    for i in range(1,num+1):
+        factor=factor*i
+    print('Factorial is:', factor)
+ 
+if __name__=='__main__':
+    factorial(5)   
