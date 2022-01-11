@@ -1,0 +1,25 @@
+#Create any multithreaded code using for loop for creating multithreads
+#for i in range(10):
+#    th = Thread(target=func_name, args=(i, ))
+#print total active threads in multithreaded code using threading.active_count()
+
+import threading
+import time
+
+def thre(i):
+    print('Start of no:', i)
+    time.sleep(1)
+    print('End of', i)
+        
+def zeugs(num):
+    for i in range(num):
+        th=threading.Thread(target=thre, args=(i,))
+        th.start()
+        print('Active Threads:', threading.active_count())
+        
+
+
+if __name__ == '__main__':
+    zeugs(10)
+    
+    
