@@ -13,7 +13,7 @@ def f(n):
 if __name__ == '__main__':
 
   t1=time.time()
-  p=Pool()
+  p=Pool() # mit Pool(processes=x) das Programm erstellt nur x Prozesse
   result=p.map(f,range(100000))
   p.close()
   p.join()
