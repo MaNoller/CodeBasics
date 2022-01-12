@@ -1,3 +1,4 @@
+#No Excercise, justr tutorialcode!!
 import multiprocessing
 
 def calc_square(numbers, result, v):
