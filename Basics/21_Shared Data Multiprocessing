@@ -1,0 +1,17 @@
+import multiprocessing
+
+def calc_square(numbers, result, v):
+  v.value=7 #random value
+  for idx,n in enumerate(numbers).
+    result[idx]=n*n #assign values to the array from OUTSIDE the process
+   
+if __name__=='__main__':
+  numbers=[2,3,4] #random
+  result= multiprocessing.Array('i',3) # initialize Array to be used by process(es)
+  v=multiprocessing.Value('d',0.0)
+  p=multiprocessing.Process(target=calc_square, args=(numbers, result,vg))
+  
+  p.start()
+  p.join()
+  
+  print(v.value)
